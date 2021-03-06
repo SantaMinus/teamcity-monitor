@@ -3,7 +3,7 @@ image: gradle:latest
 Build project:
   stage: build
   script:
-    - gradle build
+    - gradle assemble
 
 Test project:
   stage: test
