@@ -2,7 +2,9 @@ plugins {
     id 'org.springframework.boot' version '2.2.2.RELEASE'
     id 'io.spring.dependency-management' version '1.0.8.RELEASE'
     id 'java'
+    id 'groovy'
 }
+apply plugin: 'groovy'
 
 group = 'com.sava'
 version = '0.0.1-SNAPSHOT'
@@ -17,10 +19,15 @@ dependencies {
 
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    
+    implementation group: 'log4j', name: 'log4j', version: '1.2.17'
+    implementation group: 'org.codehaus.groovy', name: 'groovy-all', version: '2.5.14', ext: 'pom'
+
+
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
+    testImplementation group: 'org.spockframework', name: 'spock-core', version: '2.0-M4-groovy-2.5'
+
 }
 
 test {
