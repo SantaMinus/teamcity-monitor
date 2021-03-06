@@ -4,3 +4,8 @@ Build project:
   stage: build
   script:
     - gradle build
+
+Test project:
+  stage: test
+  script:
+    - gradle test
