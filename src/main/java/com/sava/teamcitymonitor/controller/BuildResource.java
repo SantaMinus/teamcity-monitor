@@ -10,12 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/teamcity")
 public class BuildResource {
-    private final BuildService service;
-
     @Autowired
-    public BuildResource(BuildService buildService) {
-        this.service = buildService;
-    }
+    private BuildService service;
 
     @GetMapping(value = "/builds")
     public String getRunningBuilds(@RequestParam(value = "user", defaultValue = "test") String user) {

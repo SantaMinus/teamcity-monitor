@@ -1,0 +1,11 @@
+image: gradle:latest
+
+Build project:
+  stage: build
+  script:
+    - gradle assemble
+
+Test project:
+  stage: test
+  script:
+    - gradle test
