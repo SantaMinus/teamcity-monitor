@@ -1,11 +1,13 @@
 package com.sava.teamcitymonitor.service;
 
 import org.apache.http.client.utils.URIBuilder;
+import org.springframework.stereotype.Component;
 
 import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.net.URL;
 
+@Component
 public class UrlBuilder {
     String url = "https://teamcity.{host}.com/app/rest/builds?locator=user:{login}";
 
