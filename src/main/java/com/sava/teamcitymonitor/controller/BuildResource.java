@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/teamcity")
 public class BuildResource {
+    @Autowired
     private final BuildService service;
 
-    @Autowired
     public BuildResource(BuildService buildService) {
         this.service = buildService;
     }

@@ -1,6 +1,5 @@
 package com.sava.teamcitymonitor.service;
 
-import com.sava.teamcitymonitor.config.AppConfig;
 import org.apache.http.client.utils.URIBuilder;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -14,9 +13,9 @@ public class UrlBuilder {
     String url = "https:/teamcity.{host}.com/app/rest/builds?locator=user:{login}";
 
     @Value("${teamcity.host}")
-    String host;
+    private String host;
     @Value("${spring.application.name}")
-    String name;
+    private String name;
 
     private static final String BASIC_PATH = "/app/rest";
     private static final String LOCATOR_PARAM_NAME = "locator";
@@ -28,7 +27,7 @@ public class UrlBuilder {
     URL buildsLocator() throws MalformedURLException, URISyntaxException {
         return new URIBuilder()
                 .setScheme("https")
-                .setHost(AppConfig.host)
+                .setHost(host)
                 .setPathSegments(BASIC_PATH, BUILDS_PATH)
                 .addParameter(LOCATOR_PARAM_NAME, String.format(USER_PARAM, "login"))
                 .build()

@@ -2,6 +2,7 @@ package com.sava.teamcitymonitor.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.BufferedReader;
@@ -11,14 +12,15 @@ import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.net.URLConnection;
 
-@Service("buildService")
+@Service
 public class BuildServiceImpl implements BuildService {
     private static final Logger LOGGER = LoggerFactory.getLogger(BuildServiceImpl.class);
+    @Autowired
+    UrlBuilder builder;
 
     @Override
     public String getRunningBuilds(String user) {
         try {
-            UrlBuilder builder = new UrlBuilder();
             URLConnection connection = builder.buildsLocator().openConnection();
             BufferedReader in = new BufferedReader(
                     new InputStreamReader(connection.getInputStream()));
