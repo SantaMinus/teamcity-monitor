@@ -25,7 +25,6 @@ public class UrlBuilder {
     private static final String BUILDS_PATH = "/builds";
     private static final String USER_LOCATOR_PARAM = "locator=user:";
 
-
     URL buildsLocator() throws MalformedURLException, URISyntaxException {
         return new URIBuilder()
                 .setScheme("https")
