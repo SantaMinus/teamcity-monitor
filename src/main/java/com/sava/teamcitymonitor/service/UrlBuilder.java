@@ -14,8 +14,6 @@ public class UrlBuilder {
 
     @Value("${teamcity.host}")
     private String host;
-    @Value("${spring.application.name}")
-    private String name;
 
     private static final String BASIC_PATH = "/app/rest";
     private static final String LOCATOR_PARAM_NAME = "locator";
