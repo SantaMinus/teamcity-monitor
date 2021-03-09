@@ -36,9 +36,7 @@ public class BuildServiceImpl implements BuildService {
                 response.append(inputLine);
 
             in.close();
-
             return response.toString();
-
         } catch (MalformedURLException | URISyntaxException e) {
             LOGGER.error("Failed to build a URL", e);
         } catch (IOException e) {

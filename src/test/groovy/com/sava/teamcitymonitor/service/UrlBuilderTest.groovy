@@ -7,6 +7,7 @@ class UrlBuilderTest extends Specification {
 
     def "buildsLocator() "() {
         expect:
-        builder.buildsLocator('example', 'T.Est').toString() == 'https://teamcity.example.com/app/rest/builds'
+        builder.buildsLocator('example', 'test').toString() ==
+                'https://teamcity.example.com/app/rest/builds?locator=user:test'
     }
 }
