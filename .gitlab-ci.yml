@@ -1,14 +1,21 @@
 image: gradle:latest
 
+variables:
+   MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository"
+
+cache:
+   paths:
+      - .m2/repository
+
 Build project:
    stage: build
    script:
-      - gradle classes
+      - gradle $MAVEN_OPTS classes
 
 Test project:
    stage: test
    script:
-      - gradle test
+      - gradle $MAVEN_OPTS test
    artifacts:
       paths:
          - build/test-results/test/TEST-*.xml
@@ -19,7 +26,7 @@ Package artifact:
    image: bellsoft/liberica-openjdk-alpine:15
    stage: deploy
    script:
-      ./gradlew assemble
+      ./gradlew $MAVEN_OPTS assemble
    artifacts:
       paths:
          - build/libs/team-city-monitor-*-SNAPSHOT.jar
