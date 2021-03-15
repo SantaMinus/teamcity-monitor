@@ -12,13 +12,12 @@ public class UrlBuilder {
     private static final String APP_PATH = "app";
     private static final String REST_PATH = "rest";
     private static final String USER_PARAM = "locator=user:%s";
-    private static final String BASE_URL = "teamcity.%s.com";
     private static final String BUILDS_PATH = "builds";
 
     URL buildsLocator(String host, String login) throws MalformedURLException, URISyntaxException {
         return new URIBuilder()
                 .setScheme("https")
-                .setHost(String.format(BASE_URL, host))
+                .setHost(host)
                 .setPathSegments(APP_PATH, REST_PATH, BUILDS_PATH)
                 .setCustomQuery(String.format(USER_PARAM, login))
                 .build()
