@@ -26,7 +26,7 @@ Package artifact:
    image: bellsoft/liberica-openjdk-alpine:15
    stage: deploy
    script:
-      ./gradlew $MAVEN_OPTS assemble
+      - ./gradlew $MAVEN_OPTS assemble
    artifacts:
       paths:
          - build/libs/team-city-monitor-*-SNAPSHOT.jar
