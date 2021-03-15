@@ -26,6 +26,7 @@ Package artifact:
    image: bellsoft/liberica-openjdk-alpine:15
    stage: deploy
    script:
+      - chmod +x ./gradlew
       - ./gradlew $MAVEN_OPTS assemble
    artifacts:
       paths:
