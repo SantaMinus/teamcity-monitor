@@ -1,16 +1,26 @@
 image: gradle:latest
 
 Build project:
-  stage: build
-  script:
-    - gradle assemble
+   stage: build
+   script:
+      - gradle classes
 
 Test project:
-  stage: test
-  script:
-    - gradle test
-  artifacts:
-    paths:
-      - build/test-results/test/TEST-*.xml
-    reports:
-      junit: build/test-results/test/TEST-*.xml
+   stage: test
+   script:
+      - gradle test
+   artifacts:
+      paths:
+         - build/test-results/test/TEST-*.xml
+      reports:
+         junit: build/test-results/test/TEST-*.xml
+
+Package artifact:
+   image: bellsoft/liberice-openjdk-alpine:15
+   stage: deploy
+   script:
+      ./gradlew assemble
+   artifacts:
+      paths:
+         - build/libs/team-city-monitor-*-SNAPSHOT.jar
+      expire_in: 30 days
