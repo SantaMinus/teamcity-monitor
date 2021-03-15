@@ -16,7 +16,7 @@ Test project:
          junit: build/test-results/test/TEST-*.xml
 
 Package artifact:
-   image: bellsoft/liberice-openjdk-alpine:15
+   image: bellsoft/liberica-openjdk-alpine:15
    stage: deploy
    script:
       ./gradlew assemble
