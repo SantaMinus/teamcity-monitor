@@ -8,3 +8,5 @@ The main requirement is to get different users' running builds restricting info 
 - state
 
 E.g., `id="‎3344879" buildTypeId="OpenSourceProjects_Sample_Buld" number="2025" status="UNKNOWN" state="finished"`
+
+**Note**: in order to see the builds run by other users, you need to have a permission to view other users.
