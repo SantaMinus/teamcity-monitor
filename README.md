@@ -1,3 +1,5 @@
+[![Build check on PR](https://github.com/SantaMinus/team-city-monitor/actions/workflows/pr_build_check.yml/badge.svg)](https://github.com/SantaMinus/team-city-monitor/actions/workflows/pr_build_check.yml)
+
 This project is aimed to introduce a lightweight client to get data from the TeamCity API.
 
 The main requirement is to get different users' running builds restricting info to the following fields:
