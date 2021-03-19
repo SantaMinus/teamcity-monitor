@@ -3,6 +3,7 @@ name: Build check on PR
 on:
   workflow_dispatch:
   pull_request:
+    types: [assigned, opened, synchronize, reopened]
     branches: 
       - master
 
