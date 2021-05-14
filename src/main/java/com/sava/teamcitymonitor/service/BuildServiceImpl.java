@@ -24,7 +24,7 @@ public class BuildServiceImpl implements BuildService {
     private String login;
 
     @Override
-    public String getRunningBuilds(String user) {
+    public String getByUser(String user) {
         try {
             URLConnection connection = builder.buildsLocator(host, login).openConnection();
             BufferedReader in = new BufferedReader(
