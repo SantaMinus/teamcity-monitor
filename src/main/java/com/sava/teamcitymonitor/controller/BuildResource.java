@@ -15,6 +15,6 @@ public class BuildResource {
 
     @GetMapping(value = "/builds")
     public String getRunningBuilds(@RequestParam(value = "user", defaultValue = "test") String user) {
-        return service.getRunningBuilds(user);
+        return service.getByUser(user);
     }
 }
